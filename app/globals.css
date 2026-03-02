@@ -1,36 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
-  --font-dancing: var(--font-dancing-script);
-
-  --color-bg-primary: #D8DFE5;
-  --color-bg-secondary: #E6EBEF;
-  --color-card-bg: #F6FBFF;
-  --color-text-primary: #0e1c29;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
   
-  --color-ivory: #FCFAF7;
-  --color-deep-charcoal: #1A1A1A;
-  --color-gold: #C5A059;
-  --color-soft-gold: #D4B982;
-  --color-muted-grey: #4A4A4A;
+  --color-soft-bg: #fdfcfb;
+  --color-soft-ink: #1a1a1a;
+  --color-cozy-accent: #8e8d8a;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-bg-secondary text-text-primary antialiased transition-colors duration-300;
+    @apply bg-[var(--color-soft-bg)] text-[var(--color-soft-ink)] transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-[#0a0a0a] text-[#f5f5f5];
   }
 }
 
-:root {
-  --background: #FCFAF7;
-  --foreground: #1A1A1A;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1A1A1A;
-    --foreground: #FCFAF7;
-  }
+.perspective-1000 {
+  perspective: 1000px;
 }

@@ -1,23 +1,8 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Dancing_Script } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const dancingScript = Dancing_Script({
-  variable: "--font-dancing-script",
-  subsets: ["latin"],
-});
+import { Providers } from "@/components/Providers";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 
 
@@ -64,25 +49,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${playfair.variable} ${inter.variable} ${dancingScript.variable} antialiased`}
-      >
-        <div
-          className="pointer-events-none fixed inset-0 z-100 opacity-[0.1]"
-          style={{
-            backgroundImage: "url('https://framerusercontent.com/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png?width=256&height=256')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "128px auto",
-          }}
-        />
-        <div className="flex min-h-screen flex-col bg-bg-secondary text-text-primary">
-          <Navbar />
-          <main className="grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased min-h-screen">
+        <Providers>
+          <div className="flex flex-col min-h-screen selection:bg-zinc-900 selection:text-white dark:selection:bg-white dark:selection:text-black">
+            <Navbar />
+            <main className="grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
