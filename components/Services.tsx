@@ -19,7 +19,7 @@ const services = [
   },
   {
     title: "Brand Storytelling",
-    description: "visual content designed to elevate your brand's identity.",
+    description: "Strategic visual content designed to elevate your brand's identity.",
     icon: Briefcase,
     className: "md:col-span-1 md:row-span-1 bg-amber-50/50 dark:bg-amber-900/10",
     iconColor: "text-amber-600 dark:text-amber-400"
@@ -60,7 +60,7 @@ export const Services = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[180px] auto-rows-auto">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -69,7 +69,7 @@ export const Services = () => {
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
             className={cn(
-              "group relative p-8 rounded-4xl border border-zinc-200/50 dark:border-zinc-800/50 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-zinc-200/50 dark:hover:shadow-none",
+              "group relative p-8 rounded-4x border border-zinc-200/50 dark:border-zinc-800/50 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-zinc-200/50 dark:hover:shadow-none",
               service.className
             )}
           >

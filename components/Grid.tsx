@@ -37,20 +37,6 @@ const items = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
     className: "md:col-span-2 md:row-span-1",
   },
-  {
-    id: 6,
-    title: "Nature's Whisper",
-    category: "Landscape",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1000",
-    className: "md:col-span-1 md:row-span-1",
-  },
-  {
-    id: 7,
-    title: "Street Soul",
-    category: "Documentary",
-    image: "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&q=80&w=1000",
-    className: "md:col-span-1 md:row-span-1",
-  }
 ];
 
 export const Grid = () => {
@@ -61,7 +47,7 @@ export const Grid = () => {
         <p className="opacity-60 max-w-md">A collection of moments captured through my lens, blending light, emotion, and story.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[300px] auto-rows-[250px]">
         {items.map((item, index) => (
           <motion.div
             key={item.id}

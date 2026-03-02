@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence } from 'motion/react';
-import { ThemeProvider } from "@/theme/Theme-Toggle";
+import { ThemeProvider } from 'next-themes';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <AnimatePresence mode="wait">
         <motion.div
           key="layout"

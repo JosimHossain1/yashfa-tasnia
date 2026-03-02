@@ -1,63 +1,34 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { Sun, Moon } from 'lucide-react';
 
-type Theme = 'light' | 'dark';
-
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      return (saved as Theme) || 'light';
-    }
-    return 'light';
-  });
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
-
 export const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-white/10" />
+    );
+  }
 
   return (
     <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      className="p-2 rounded-full bg-zinc-200 dark:bg-white/10 transition-colors"
       aria-label="Toggle Theme"
     >
-      {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+      {theme === 'dark' ? (
+        <Moon size={20} className="text-black" />
+      ) : (
+        <Sun size={20} className="text-white" />
+      )}
     </button>
   );
 };
+

@@ -10,7 +10,7 @@ export const Hero = () => {
         className="text-center z-10"
       >
         <h2 className="font-serif italic text-lg md:text-xl mb-4 opacity-60">Photographer & Videographer</h2>
-        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter leading-none mb-8">
+        <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter leading-none mb-8">
           Capturing <br />
           <span className="italic">the soul</span> of moments.
         </h1>
@@ -38,11 +38,6 @@ export const Hero = () => {
           referrerPolicy="no-referrer"
         />
       </motion.div>
-
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll to explore</span>
-        <div className="w-px h-12 bg-current"></div>
-      </div>
     </section>
   );
 };
