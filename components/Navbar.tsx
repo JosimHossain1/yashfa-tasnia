@@ -22,9 +22,9 @@ export const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 transition-all duration-500 text-black",
         isScrolled
-          ? "backdrop-blur-xl bg-soft/80 dark:bg-[#0a0a0a]/80 border-b border-zinc-200/50 dark:border-zinc-800/50 py-3"
+          ? "backdrop-blur-xl bg-white/80  dark:bg-[#0a0a0a]/80 border-b border-zinc-200/50 dark:border-zinc-800/50 py-3"
           : "bg-transparent py-5"
       )}
     >
