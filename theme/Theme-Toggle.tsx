@@ -23,7 +23,7 @@ export const ThemeToggle = () => {
       className="p-2 rounded-full bg-zinc-200 dark:bg-white/10 transition-colors"
       aria-label="Toggle Theme"
     >
-      {theme === 'dark' ? (
+      {theme === 'light' ? (
         <Moon size={20} className="text-black" />
       ) : (
         <Sun size={20} className="text-white" />

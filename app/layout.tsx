@@ -49,16 +49,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning >
       <body className="antialiased min-h-screen">
         <Providers>
-          <div className="flex flex-col min-h-screen selection:bg-zinc-900 selection:text-white dark:selection:bg-white dark:selection:text-black">
+
             <Navbar />
             <main className="grow">
               {children}
             </main>
             <Footer />
-          </div>
         </Providers>
       </body>
     </html>

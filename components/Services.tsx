@@ -7,42 +7,42 @@ const services = [
     title: "Editorial Photography",
     description: "High-end fashion and magazine-style shoots that tell a compelling visual story through composition and light.",
     icon: Camera,
-    className: "md:col-span-2 md:row-span-2 bg-blue-50/50 dark:bg-blue-900/10",
+    className: "md:col-span-2 md:row-span-2 bg-blue-50/50 dark:bg-blue-400/10",
     iconColor: "text-blue-600 dark:text-blue-400"
   },
   {
     title: "Cinematic Videography",
     description: "Moving images that capture the rhythm and emotion of your story.",
     icon: Video,
-    className: "md:col-span-2 md:row-span-1 bg-purple-50/50 dark:bg-purple-900/10",
+    className: "md:col-span-2 md:row-span-1 bg-purple-50/50 dark:bg-purple-400/10",
     iconColor: "text-purple-600 dark:text-purple-400"
   },
   {
     title: "Brand Storytelling",
-    description: "Strategic visual content designed to elevate your brand's identity.",
+    description: "Visual content designed to elevate your brand's identity.",
     icon: Briefcase,
-    className: "md:col-span-1 md:row-span-1 bg-amber-50/50 dark:bg-amber-900/10",
+    className: "md:col-span-1 md:row-span-1 bg-amber-50/50 dark:bg-amber-400/10",
     iconColor: "text-amber-600 dark:text-amber-400"
   },
   {
     title: "Lifestyle Sessions",
     description: "Authentic, candid moments captured in natural settings.",
     icon: Heart,
-    className: "md:col-span-1 md:row-span-1 bg-rose-50/50 dark:bg-rose-900/10",
+    className: "md:col-span-1 md:row-span-1 bg-rose-50/50 dark:bg-rose-400/10",
     iconColor: "text-rose-600 dark:text-rose-400"
   },
   {
     title: "Creative Direction",
     description: "Full-scale conceptualization and planning for your visual projects.",
     icon: Sparkles,
-    className: "md:col-span-2 md:row-span-1 bg-emerald-50/50 dark:bg-emerald-900/10",
+    className: "md:col-span-2 md:row-span-1 bg-emerald-50/50 dark:bg-emerald-400/10",
     iconColor: "text-emerald-600 dark:text-emerald-400"
   },
   {
     title: "Post-Production",
     description: "Expert color grading and retouching for a signature finish.",
     icon: ImageIcon,
-    className: "md:col-span-2 md:row-span-1 bg-zinc-100/50 dark:bg-zinc-800/20",
+    className: "md:col-span-2 md:row-span-1 bg-zinc-100/50 dark:bg-zinc-400/10",
     iconColor: "text-zinc-600 dark:text-zinc-400"
   }
 ];
@@ -69,7 +69,7 @@ export const Services = () => {
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
             className={cn(
-              "group relative p-8 rounded-4x border border-zinc-200/50 dark:border-zinc-800/50 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-zinc-200/50 dark:hover:shadow-none",
+              "group relative p-8 rounded-4xl border border-zinc-200/50 dark:border-zinc-800/50 overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-zinc-200/50 dark:hover:shadow-none",
               service.className
             )}
           >

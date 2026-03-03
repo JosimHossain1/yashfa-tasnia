@@ -11,7 +11,7 @@ export const About = () => {
           className="relative aspect-4/5 rounded-3xl overflow-hidden"
         >
           <img 
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=1000" 
+            src="/yashfa.jpg" 
             alt="Yashfa Tasnia" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

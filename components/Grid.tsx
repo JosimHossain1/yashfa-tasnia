@@ -29,14 +29,7 @@ const items = [
     category: "Film",
     image: "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=1000",
     className: "md:col-span-1 md:row-span-1",
-  },
-  {
-    id: 5,
-    title: "Minimalist Spaces",
-    category: "Architecture",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
-    className: "md:col-span-2 md:row-span-1",
-  },
+  }
 ];
 
 export const Grid = () => {

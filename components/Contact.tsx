@@ -12,11 +12,11 @@ export const Contact = () => {
           </p>
           
           <div className="space-y-6">
-            <a href="mailto:hello@yashfatasnia.com" className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center group-hover:bg-current group-hover:text-white transition-all">
+            <a href="mailto:yashfa.films@gmail.com" className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center">
                 <Mail className="w-5 h-5" />
               </div>
-              <span className="text-xl font-serif italic">hello@yashfatasnia.com</span>
+              <span className="text-xl font-serif italic">yashfa.films@gmail.com</span>
             </a>
             
             <div className="flex gap-4 pt-4">
@@ -49,7 +49,7 @@ export const Contact = () => {
             <label className="text-[10px] uppercase tracking-widest opacity-50">Message</label>
             <textarea rows={4} className="w-full bg-transparent border-b border-current/20 py-2 focus:border-current outline-none transition-colors resize-none" />
           </div>
-          <button className="flex items-center gap-4 group text-xl font-serif italic">
+          <button className="flex items-center gap-4 group text-xl font-serif italic cursor-pointer">
             Send Message
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </button>
