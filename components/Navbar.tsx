@@ -1,23 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { useState} from "react";
 import { ThemeToggle } from "@/theme/Theme-Toggle";
 import Link from "next/link";
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { name: "Work", href: "#work" },
@@ -31,22 +21,12 @@ export const Navbar = () => {
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-500",
-          isScrolled
-            ? "py-3 backdrop-blur-sm bg-black/80 dark:bg-black/70"
-            : "py-5 bg-transparent"
-        )}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-500 py-5 bg-transparent"
       >
         {/* Logo */}
         <div className="flex items-center gap-2">
           <span
-            className={cn(
-              "font-serif text-2xl font-medium tracking-tight transition-colors duration-300",
-              isScrolled
-                ? "text-white"
-                : "text-black dark:text-white"
-            )}
+            className="font-serif text-2xl font-medium tracking-tight transition-colors duration-300 text-black dark:text-white"
           >
             Yashfa Tasnia
           </span>
@@ -58,12 +38,7 @@ export const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={cn(
-                "transition-opacity hover:opacity-60 transition-colors duration-300",
-                isScrolled
-                  ? "text-white"
-                  : "text-black dark:text-white"
-              )}
+              className="transition-opacity hover:opacity-60 duration-300 text-black dark:text-white"
             >
               {link.name}
             </Link>
@@ -76,12 +51,7 @@ export const Navbar = () => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={cn(
-              "md:hidden transition-colors duration-300",
-              isScrolled
-                ? "text-white"
-                : "text-black dark:text-white"
-            )}
+            className="md:hidden transition-colors duration-300 text-black dark:text-white"
           >
             {isMobileMenuOpen ? "Close" : "Menu"}
           </button>
